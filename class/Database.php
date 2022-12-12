@@ -13,14 +13,21 @@ class Database
     {
         $query = "CREATE TABLE IF NOT EXISTS task 
         (
-            id INT NOT NULL,
+            id INTEGER NOT NULL,
             done BOOLEAN NOT NULL,
             name VARCHAR(255) NOT NULL,
-            PRIMARY KEY('id', AUTOINCREMENT)
+            PRIMARY KEY('id' AUTOINCREMENT)
             );";
         $this->exec($query);
     }
 
+
+    public function addTask(string $name) : void
+    {
+        $query = "INSERT INTO task (`done`,`name`) VALUES (false, '$name')";
+
+        $this->exec($query);
+    }
     private function exec(string $query): void
     {
         $this->db->prepare($query);
