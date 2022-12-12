@@ -44,10 +44,12 @@ include_once 'functions.php'
                     <th>Fait</th>
                     <th>Nom</th>
                     <tbody>
-                        <tr>
-                            <td class="text-center" style="width: 10%;"><input type="checkbox" class="form-check-input"></td>
-                            <td>Nom de la tâche</td>
-                        </tr>
+                      <?php
+                      foreach ($tasks as $task)
+                      {
+                        
+                      }
+                      ?>
                     </tbody>
                 </thead>
             </table>
