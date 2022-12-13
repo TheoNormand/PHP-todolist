@@ -46,16 +46,16 @@ include_once 'functions.php'
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($tasks as $task)
-                        {
-                            ?>
+                        foreach ($tasks as $task) {
+                        ?>
                             <tr>
                                 <td class="text-center" style="width: 10%;">
-                                 <input type="checkbox" class="form-check-input" data-id="<?= $task['id'] ?>" <?= $task['checked'] ?>>
+                                    <input type="checkbox" class="form-check-input" data-id="<?= $task['id'] ?>" <?= $task['checked'] ?>>
                                 </td>
                                 <td><?= $task['name'] ?></td>
                             </tr>
-                             <?php
+                            
+                        <?php
                         }
                         ?>
                     </tbody>   
