@@ -2,6 +2,7 @@
 const formAddTask = document.querySelector('#formAddTask');
 
 const URL_ACTIONS = 'actions.php';
+const tableTasks = document.querySelector('.table');
 
 formAddTask.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -15,5 +16,7 @@ formAddTask.addEventListener('submit', async function (e) {
         .then(data => data.json())
         .then(json => {
             if (json.code !== 'ADD_TASK_OK' ) return;
+
+            const row
         })
 })

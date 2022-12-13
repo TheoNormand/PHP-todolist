@@ -37,22 +37,32 @@ include_once 'functions.php'
                  <button type="submit" class="btn btn-primary mb-3">Ajouter</button>
             </div>
         </form>
-
-        <div class="col-7 offset-2">
-            <table class="table table-bordered table-striped table-hover">
-                <thead>
-                    <th>Fait</th>
-                    <th>Nom</th>
+        <div class="row">
+            <div class="col-7 offset-2">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <th>Fait</th>
+                        <th>Nom</th>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <td class="text-center" style="width: 10%;"><input type="checkbox" class="form-check-input"></td>
-                            <td>Nom de la tâche</td>
-                        </tr>
-                    </tbody>
-                </thead>
-            </table>
-        </div>
-    </div>  
+                        <?php
+                        foreach ($tasks as $task)
+                        {
+                            ?>
+                            <tr>
+                                <td class="text-center" style="width: 10%;">
+                                 <input type="checkbox" class="form-check-input" data-id="<?= $task['id'] ?>" <?= $task['checked'] ?>>
+                                </td>
+                                <td><?= $task['name'] ?></td>
+                            </tr>
+                             <?php
+                        }
+                        ?>
+                    </tbody>   
+                </table>
+            </div>
+        </div>  
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="script.js"></script>
